@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import "tailwindcss";
+
+/* @import "tailwindcss/preflight";     */
+@import "tailwindcss/utilities";    
+
+@theme {
+    --font-bebas: "Bebas Neue";
+}
+
+body{
+    /* background: #f0eadc; */
+    background: #dfe2e8;
+    /* background: whitesmoke; */
+}

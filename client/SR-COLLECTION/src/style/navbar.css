@@ -1,0 +1,26 @@
+.NavbarItems{
+    cursor: pointer;
+    opacity: 0.7;
+    
+}
+
+@reference "tailwindcss";
+.navbarItemsPressed{
+    @apply text-red-600 border-b-3 border-red-500;
+}
+
+
+/* .NavbarItems:hover{
+    border-bottom-width: 3px;
+    border-color: red;
+    transition: 0.5s;
+    opacity: 0.9;
+    color: red;
+
+
+} */
+
+
+
+
+

@@ -1,0 +1,11 @@
+@media (min-width: 321px) {
+    .filterCategories{
+        gap: 20px;
+    }
+}
+
+@media (min-width: 344px) and (max-width: 361px){
+    .filterCategories{
+        padding-left: 35px;
+    }
+}
