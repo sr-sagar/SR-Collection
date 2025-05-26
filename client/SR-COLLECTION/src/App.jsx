@@ -1,17 +1,41 @@
 import './App.css'
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Home from "./components/home"
 import Search from "./components/search"
 import Cart from "./components/cart"
 import Profile from "./components/profile"
 import HomeItems from './components/homeItems';
 import CartItems from './components/cartItems';
+import UserOrders from './components/userOrders';
+import Orders from './components/orders';
 function App() {
   
   const [category,setCategory] = useState("")
   const [input,setInput] = useState("")
   const [fetchData,setData] = useState([])
+
+  const [scroll,setScroll] = useState(true);
+
+
+  useEffect(() => {
+      const mediaQuery = window.matchMedia('(min-width: 768px)');
+      const handleMediaQuery = (e) => {
+          if(e.matches){
+              setScroll(false);
+          }
+          else{
+              setScroll(true);
+          }
+      };
+      handleMediaQuery(mediaQuery);
+      mediaQuery.addEventListener('change', handleMediaQuery);
+      return() => {
+          mediaQuery.removeEventListener('change', handleMediaQuery);
+      };
+  },[])
+
+
   const arr = [ 
         
     {"name" : "ajrak dress piece hell this is a trial", id: 1, price: 200},
@@ -59,11 +83,12 @@ const handleSearchFilter = () => {
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<Home category={category} setCategory={setCategory} input={input} setInput={setInput} filteredItems={filteredItems} handleSearchFilter={handleSearchFilter}/>}/>
-          <Route path='/search' element={<Search category={category} setCategory={setCategory} input={input} setInput={setInput} filteredItems={filteredItems} setFilteredItems={setFilteredItems} handleSearchFilter={handleSearchFilter}/>}/>
-          <Route path='/cart' element={<Cart  filteredItems={filteredItems}/>}/>
-          <Route path='/profile' element={<Profile />}/>
+          <Route path='/' element={<Home category={category} setCategory={setCategory} input={input} setInput={setInput} filteredItems={filteredItems} handleSearchFilter={handleSearchFilter} scroll={scroll}/>}/>
+          <Route path='/search' element={<Search category={category} setCategory={setCategory} input={input} setInput={setInput} filteredItems={filteredItems} setFilteredItems={setFilteredItems} handleSearchFilter={handleSearchFilter} scroll={scroll}/>}/>
+          <Route path='/cart' element={<Cart  filteredItems={filteredItems} scroll={scroll}/>}/>
+          <Route path='/profile' element={<Profile scroll={scroll}/>}/>
           <Route path='/items/:id' element={<HomeItems />}/>
+          <Route path='/order/:id' element={<Orders />}/>
         </Routes>
       </Router>
     </>

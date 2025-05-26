@@ -6,10 +6,13 @@
 
 @reference "tailwindcss";
 .navbarItemsPressed{
-    @apply text-red-600 border-b-3 border-red-500;
+    @apply text-[#403F4C] border-b-3 border-[#D1D5DB];
 }
 
-
+.navbarItemsStill{
+    @apply text-black md:text-[#8C8C94] ;
+    font-family: "Space Grotesk";
+}
 /* .NavbarItems:hover{
     border-bottom-width: 3px;
     border-color: red;

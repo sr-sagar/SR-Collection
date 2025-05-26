@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-const ImageScroller = () => {
+const ImageScroller = ({scroll}) => {
 
     const [current,setCurrent] = useState(0);
     const images = [
@@ -11,20 +11,30 @@ const ImageScroller = () => {
     ]
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrent((prev) => (prev + 1) % images.length);
-        }, 3000);
+        if(scroll){
 
-        return () => clearInterval(interval)
+            const interval = setInterval(() => {
+                setCurrent((prev) => (prev + 1) % images.length);
+            }, 3000);
+            
+            return () => clearInterval(interval)
+        }
     },[])
 
     return(
         <div className="homeHeaderImg object-[50%_top] ">
-            <div 
+            {scroll&&
+                <div 
                 style={{backgroundImage: `url(${images[current]})`}}
                 className="w-full h-[80%] md:absolute md:bg-cover bg-[center_top] md:opacity-[0.2]"
-            ></div>
-            <img src={images[current]} alt="n/a" className="absolute w-full h-[60%] md:h-[80%] md:object-contain  object-cover object-[center_0%] opacity-[0.9] md:bg-gradient-to-r md:from-black md:via-red-500 md:to-black   "/>
+                ></div>
+            }
+            {scroll?
+            <img src={images[current]} alt="n/a" className="absolute w-full h-[100%] md:h-[80%] md:object-contain  object-cover object-[center_0%] opacity-[0.9] "/>
+            :
+            <img src={images[3]} alt="n/a" className="absolute w-full h-[60%] md:h-[100%] md:object-contain  object-cover object-[right_0%] opacity-[0.9] md:bg-gradient-to-r md:from-[#5B331C] md:to-[#5B331C] z-[-1]"/>
+            }
+            {/* md:bg-gradient-to-r md:from-black md:via-red-500 md:to-black */}
         </div>
     )
 }

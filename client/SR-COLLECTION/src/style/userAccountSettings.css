@@ -1,0 +1,5 @@
+@reference 'tailwindcss';
+
+.settingItems{
+    @apply w-full h-auto  p-1 border-b-1 border-[#D1D5DB] cursor-pointer active:scale-95 transition transform;
+}

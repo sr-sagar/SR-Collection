@@ -1,12 +1,8 @@
 import React from "react";
-import { useState} from "react"
 const Filter = ({category,setCategory,input,setInput,handleSearchFilter}) => {
-    // const [category,setCategory] = useState("")
-    // const [input,setInput] = useState("")
-    const [clicked,setClicked] = useState(false)
     return(
-        <div className="flex w-full h-full mt-1">
-            <select className="w-[25%] h-[70%] mt-1 mb-1 ml-5 md:ml-10 lg:ml-15 xl:ml-20 outline-none border-[0.5px] rounded-md shadow-md" value={category} onChange={(e) => setCategory(e.target.value)}>
+        <div className="flex items-center justify-center w-full h-full mt-1 gap-x-5 md:gap-x-8 lg:gap-x-12 bg-[#F4F5F7]">
+            <select className="w-[25%] h-[50%]  outline-none border-[0.5px] border-[#D1D5DB] text-[#2B2A28] bg-[#FFFFFF] rounded-md shadow-md" value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value="">Select an option</option>
                 <option value="Low-to-High">Low-to-High</option>
                 <option value="Dress">Dress</option>
@@ -19,10 +15,9 @@ const Filter = ({category,setCategory,input,setInput,handleSearchFilter}) => {
                 placeholder="search" 
                 value={input} 
                 onChange={(e) => setInput(e.target.value)}
-                className="w-[30%] h-[70%] mt-1 mb-1 ml-5 md:10 lg:ml-15 xl:ml-20 border-1 text-center rounded-md"
+                className="w-[30%] h-[50%]  border-1 border-[#D1D5DB] text-center text-[#2B2A28] rounded-md bg-[#FFFFFF]"
             />
-
-            <button className={`w-[25%] h-[70%] mt-1 mb-1 ml-5 mr-5 md:ml-10 md:mr-10 lg:ml-15 lg:mr-15 xl:ml-20 xl:mr-20 rounded-md text-center ${clicked? "shadow-sm" : "shadow-md"}`} onMouseDown={() => setClicked(true)} onMouseUp={() => setClicked(false)} onClick={() => handleSearchFilter()}>
+            <button className={`w-[25%] h-[50%]  rounded-md text-[#FDFDFD] trasition active:scale-95  transform bg-[#3EABA9] font-inter font-500 uppercase`}  onClick={() => handleSearchFilter()}>
                 Search
             </button>
         </div>

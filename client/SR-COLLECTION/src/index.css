@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Unbounded:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Space+Grotesk:wght@300..700&family=Unbounded:wght@200..900&display=swap');
 @import "tailwindcss";
 
 /* @import "tailwindcss/preflight";     */
@@ -6,10 +11,26 @@
 
 @theme {
     --font-bebas: "Bebas Neue";
+    --font-playfair: "Playfair Display";
+    --font-inter: "Inter";
+    --font-Space: "Space Grotesk";
+    --font-Un: "Unbounded";
+    --font-P: "Pacifico";
 }
 
 body{
-    /* background: #f0eadc; */
-    background: #dfe2e8;
-    /* background: whitesmoke; */
+    /* background: #F6F1EB; */
+    background: #F4F5F7;
+    border-color: #D1D5DB;
+    font-family: "Space Grotesk";
+    /* color: #2B2A28; */
+    background-image: radial-gradient(#D1D5DB 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+*:not(h2){
+    font-family: "Space Grotesk";
+}
+h2{
+    font-family: "Pacifico";
 }
