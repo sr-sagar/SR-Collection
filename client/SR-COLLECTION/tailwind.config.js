@@ -6,8 +6,11 @@ export default {
         fontFamily: {
           bebas: ['"Bebas Neue"', 'sans-serif'],
         },
+        
       },
     },
-    plugins: [],
+    plugins: [
+      require('@tailwindcss/line-clamp'),
+    ],
   }
   

@@ -4,6 +4,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Unbounded:wght@200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Space+Grotesk:wght@300..700&family=Unbounded:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import "tailwindcss";
 
 /* @import "tailwindcss/preflight";     */
@@ -16,6 +21,7 @@
     --font-Space: "Space Grotesk";
     --font-Un: "Unbounded";
     --font-P: "Pacifico";
+    --font-Anton: "Anton";
 }
 
 body{
@@ -24,13 +30,14 @@ body{
     border-color: #D1D5DB;
     font-family: "Space Grotesk";
     /* color: #2B2A28; */
-    background-image: radial-gradient(#D1D5DB 1px, transparent 1px);
-    background-size: 20px 20px;
+    /* background-image: radial-gradient(#D1D5DB 1px, transparent 1px); */
+    /* background-size: 20px 20px; */
 }
 
 *:not(h2){
     font-family: "Space Grotesk";
 }
 h2{
-    font-family: "Pacifico";
+    font-family: "Unbounded";
+    /* font-family: "Pacifico"; cursive writing*/
 }

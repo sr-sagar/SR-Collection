@@ -11,10 +11,19 @@
     "tailwind:watch": "node ./node_modules/tailwindcss/lib/cli.js -i ./src/style/input.css -o ./dist/output.css --watch"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/vite": "^4.1.7",
+    "date-fns": "^4.1.0",
+    "firebase": "^11.10.0",
+    "jwt-decode": "^4.0.0",
+    "multer": "^2.0.1",
+    "qrcode.react": "^4.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.0"
+    "react-dropzone": "^14.3.8",
+    "react-router-dom": "^7.6.0",
+    "react-toastify": "^11.0.5",
+    "sweetalert2": "^11.22.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
