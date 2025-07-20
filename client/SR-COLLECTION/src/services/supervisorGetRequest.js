@@ -1,6 +1,7 @@
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 const supervisorGetRequests = async(url) => {
-    const req = await fetch(`http://localhost:8080/${url}`, {
+    const req = await fetch(`${backendURL}/${url}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

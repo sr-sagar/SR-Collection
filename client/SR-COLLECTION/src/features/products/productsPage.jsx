@@ -9,6 +9,8 @@ import { useAppContext } from "../../context/AppContext";
 import { toast } from "react-toastify";
 const ProductsPage = ({scroll, filteredItems}) => {
 
+    const backendURL = import.meta.env.VITE_BACKEND_URL;
+
     const [product, setProduct] = useState(null);
     
     const { id }  = useParams();
@@ -40,7 +42,7 @@ const ProductsPage = ({scroll, filteredItems}) => {
                 productPrice: product.price,
                 productQuantity: 1,
             }
-            const req = await fetch("http://localhost:8080/userCart/addProducts", {
+            const req = await fetch(`${backendURL}/userCart/addProducts`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

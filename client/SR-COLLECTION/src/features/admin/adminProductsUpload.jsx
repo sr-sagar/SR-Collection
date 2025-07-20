@@ -10,6 +10,7 @@ import {toast} from "react-toastify"
 import { useAppContext } from "../../context/AppContext";
 
 const AdminProductsUpload = ({scroll}) => {
+    const backendURL = import.meta.env.VITE_BACKEND_URL;
     
     const {devLog} = useAppContext()
     // move this to another file/component 
@@ -62,7 +63,7 @@ const AdminProductsUpload = ({scroll}) => {
 
     const sendProductData = async(productData) => {
         
-        const req = await fetch('http://localhost:8080/productUpload', {
+        const req = await fetch(`${backendURL}/productUpload`, {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem('token')}`,

@@ -1,7 +1,8 @@
 import { toast } from "react-toastify";
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 const PostRequests = async(userData,url) => {
-    const req = await fetch(`http://localhost:8080/${url}`, {
+    const req = await fetch(`${backendURL}/${url}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

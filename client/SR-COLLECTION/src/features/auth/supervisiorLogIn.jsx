@@ -8,7 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../../context/AppContext";
 import { toast } from "react-toastify";
 const SupervisiorLogIn = ({scroll}) => {
-
+    
+    const backendURL = import.meta.env.VITE_BACKEND_URL;
     const {setCurrentSupervisior,devLog} = useAppContext();
     const navigate = useNavigate()
     const logInArr = [
@@ -28,7 +29,7 @@ const SupervisiorLogIn = ({scroll}) => {
         if(supervisiorEmailAndPass.email && supervisiorEmailAndPass.password)
         {
             setBtnClicked(true)
-            const req = await fetch('http://localhost:8080/supervisior/login', {
+            const req = await fetch(`${backendURL}/supervisior/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
