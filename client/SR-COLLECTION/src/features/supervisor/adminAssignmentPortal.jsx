@@ -79,8 +79,6 @@ const AdminAssignmentPortal = () => {
             email: currentSupervisior,
             orderId: orderId,
             newOrderStatus: statusSelectValue,
-            orderDeliveryDate: deliveryDate,
-            orderNumber: orderNumber,
         }
         const req = await supervisorPostRequestWithAuth(newOrderStatus, 'supervisior/userOrderStatusChange')
 
