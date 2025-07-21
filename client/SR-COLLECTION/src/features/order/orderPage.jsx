@@ -19,7 +19,7 @@ const OrderPage = () => {
                     <h3 className="text-2xl">My Orders</h3>
                 </div>
                 <div className="flex flex-col w-full gap-y-2 ">
-                    {orders.map((item) => (
+                    {orders.length !== 0 && orders.filter((item) => item.orderStatus !== "cancelled").map((item) => (
 
                         <OrderComponent key={item._id} orderId={item._id} imageURL={item.products.map((item) => item.productImageURL)} id={item.products.map((item) => item.productId)} orderDate={item.orderDate.split("T")[0]} orderNumber={item.orderNumber} orderDeliveryDate={item.orderDeliveryDate}/>
                     ))}
