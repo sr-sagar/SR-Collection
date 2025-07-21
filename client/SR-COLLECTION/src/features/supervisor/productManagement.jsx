@@ -13,7 +13,7 @@ const ProductManagement = ({setProductId,productId,createdAt,title,handleDeleteP
                 <p className="truncate">{title.slice(0,10)}</p>
                 <p>{String(createdAt).split("T")[0]}</p>
                 <p className="truncate">{lastDigits}</p>
-                <p className="absolute right-6 top-1/2.5 text-sm transform transition active:scale-95 text-gray-600" onClick={() => {handleDeleteProduct(productId)}}>delete</p>
+                <p className="relative right-0 top-1/2.5 text-sm transform transition active:scale-95 text-gray-600" onClick={() => {handleDeleteProduct(productId)}}>delete</p>
                 
             </div>
         </div>
