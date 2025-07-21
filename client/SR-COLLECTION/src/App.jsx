@@ -37,7 +37,7 @@ useEffect(() => {
           <AppRoutes  btn={btn} setBtn={setBtn} btnValue={btnValue} setBtnValue={setBtnValue} />
           <ToastContainer 
             position='top-center'
-            autoClose={3000}
+            autoClose={4000}
             hideProgressBar={false}
             newestOnTop={false}
             pauseOnFocusLoss

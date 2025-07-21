@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import PostRequests from "../../services/postRequests";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../../context/AppContext";
+import { usePlaceHolderScroller } from "../../components/common/placeHolderScroller";
 
 const SignUp = ({scroll}) => {
 
@@ -14,23 +15,20 @@ const SignUp = ({scroll}) => {
     const { setCurrentUser,devLog } = useAppContext()
 
     const arr = [
-        {key: "userName",type: "text" ,text: "name", id: 1, placeholder: "enter your name"},
-        {key: "email",type: "text" ,text: "email", id: 2, placeholder: "enter your email"},
-        {key: "password",type: "password" ,text: "password", id: 4, placeholder: "password"},
-        {key: "confirmPassword",type: "password" ,text: "confirm password", id: 5, placeholder: "confirm password"},
+        {key: "userName",type: "text" ,text: "Name", id: 1, placeholder: "enter your name"},
+        {key: "email",type: "text" ,text: "Email", id: 2, placeholder: "enter your email"},
+        {key: "password",type: "password" ,text: "Password", id: 4, placeholder: "password must be atleast 6 character long."},
+        {key: "confirmPassword",type: "password" ,text: "Confirm password", id: 5, placeholder: "confirm password"},
     ]
     const arr2 = [
-        {key: "phoneNumber",type: "number" ,text: "phone number", id: 3, placeholder: "enter your phone number"},
-        {key: "city",type: "text" ,text: "city", id: 6, placeholder: "enter your city name"},
-        {key: "location",type: "text" ,text: "home adress", id: 7, placeholder: "enter your home adress"},
+        {key: "phoneNumber",type: "number" ,text: "Phone number", id: 3, placeholder: "enter your phone number"},
+        {key: "city",type: "text" ,text: "City", id: 6, placeholder: "enter your city name"},
+        {key: "location",type: "text" ,text: "Home adress", id: 7, placeholder: "enter your home adress"},
 
     ]
     
     const [btnClicked,setBtnClicked] = useState(false)
     const [msg,setMSG] = useState('')
-    const [otp,setOtp] = useState('')
-    const [otpSent,setOptSent] = useState(false);
-    const [confirmationResult,setConfirmationResult] = useState(null)
 
     const [userSignUpDetails,setUserSignUpDetails] = useState({
         'userName': '',
@@ -94,7 +92,8 @@ const SignUp = ({scroll}) => {
             handleSubmit()
         }
     };
-    
+
+    const placeHolderScrollText = usePlaceHolderScroller(arr[2].placeholder)
     return(
         <div className="absolute top-0 left-0 w-full h-full bg- green-600 bg-[#F4F5F7]">
             <header className="w-full max-h-[12%] pb-5 bg-[#F4F5F7] justify-center items-center object-center ">
@@ -114,7 +113,7 @@ const SignUp = ({scroll}) => {
                                 <p className="w-[80%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%] text-left pl-1 ">{item.text}</p>
                                 <InputBox  
                                 inputType={item.type} 
-                                inputPlaceHolder={item.placeholder} 
+                                inputPlaceHolder={item.text === "Password"? placeHolderScrollText : item.placeholder} 
                                 name={item.key} 
                                 value={
                                     item.key == 'city' || item.key == 'location'? 

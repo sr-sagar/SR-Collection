@@ -230,7 +230,7 @@ const AdminAssignmentPortal = () => {
                         <div className="w-full h-[70%] flex flex-col space-y-2 overflow-y-auto pb-2 pt-1" style={{scrollBarWidth: 'none'}}>
 
                             {orders.length > 0? orders.map((item) => (
-                                <UserOrdersManagement key={item._id}  selectValue={statusSelectValue} setStatusSelectValue={setStatusSelectValue} setOrderId={setOrderId} orderId={item._id} userName={item.userName} userPhoneNumber={item.userPhoneNumber} deliveryDate={deliveryDate} setDeliveryDate={setDeliveryDate} orderNumber={orderNumber} setOrderNumber={setOrderNumber}/>
+                                <UserOrdersManagement key={item._id}  selectValue={statusSelectValue} setStatusSelectValue={setStatusSelectValue} setOrderId={setOrderId} orderId={item._id} userName={item.userName} userPhoneNumber={item.userPhoneNumber} deliveryDate={deliveryDate} setDeliveryDate={setDeliveryDate} orderNumber={orderNumber} setOrderNumber={setOrderNumber} orderAddressCity={item.userAddressCity} orderHomeAddress={item.userHomeAddress} />
                                 ))
                             
                                 :

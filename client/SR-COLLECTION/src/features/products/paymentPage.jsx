@@ -14,6 +14,7 @@ const PaymentPage = ({scroll}) => {
     const handleOrderClick = () => {
         handleOrder(productId,productPrice,productQuantity);
         toast.success("Your order will be placed shortly.")
+        toast.info("Please read the note within the products page for more information.")
         navigate('/')
     }
     return(

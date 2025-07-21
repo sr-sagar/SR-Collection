@@ -46,6 +46,18 @@ const userOrderSchema = new Schema({
     ref: 'user',
     required: true,
   },
+  userAddressCity: {
+    type: String,
+    default: null,
+    ref: "user",
+    required: true,
+  },
+  userHomeAddress: {
+    type: String,
+    default: null,
+    ref: "user",
+    required: true,
+  },
   userPhoneNumber: {
     type: String,
     ref: 'user',

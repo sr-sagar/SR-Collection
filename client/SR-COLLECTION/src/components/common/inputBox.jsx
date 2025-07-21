@@ -13,25 +13,29 @@ const InputBox = ({inputType,inputWidth,inputPlaceHolder, value, setValue, name,
             setValue(e.target.value)
         }
     }
+    // const currentScreenSize = window.current.width
     return(
-        <div className="flex items-center justify-center w-full h-auto p-1">
+        <div className="flex justify-center w-full h-auto p-1">
+            <div className="relative flex items-center justify-center w-full">
+
             <input
                  
-                type={show && inputType === "password"? "text" : inputType || "text"} 
-                className={` bg-white md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%] rounded-md shadow-md p-1`}
-                placeholder={inputPlaceHolder? `${inputPlaceHolder}` : "enter"}
-                style={{width: inputWidth? `${inputWidth}%` : "80%"}}
-                value={value}
-                onChange={handleChange}
+                 type={show && inputType === "password"? "text" : inputType || "text"} 
+                 className={` bg-white md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%] rounded-md shadow-md p-1`}
+                 placeholder={inputPlaceHolder? `${inputPlaceHolder}` : "enter"}
+                 style={{width: inputWidth? `${inputWidth}%` : "80%"}}
+                 value={value}
+                 onChange={handleChange}
             />
-            {showToggle && inputType === "password" && (
+            {showToggle && inputType === "password" && value !== '' && (
                 <span 
                     onClick={toggleVisible}
-                    className="absolute right-9 md:right-42 lg:right-64 xl:right-104 top-1/2.5 transform transition scale-95 cursor-pointer text-sm text-gray-600"
-                >
+                    className="absolute p-1 text-sm text-gray-600 transition transform scale-95 -translate-y-1/2 cursor-pointer right-8 md:left-[65%] lg:left-[62%] xl:left-[60%] top-1/2"
+                    >
                     {show? "Hide" : "Show"}
                 </span>
             )}
+            </div>
 
         </div>
     )

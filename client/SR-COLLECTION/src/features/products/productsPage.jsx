@@ -56,6 +56,7 @@ const ProductsPage = ({scroll, filteredItems}) => {
                 toast.error("unable to add product to cart. please try again later.")
                 devLog(res);
             }
+            toast.success("product added to cart successfully.")
             }catch(err)
             {
                 toast.error("something went wrong, please try again later.");
@@ -132,7 +133,7 @@ const ProductsPage = ({scroll, filteredItems}) => {
                 <div className="relative w-full mt-3 bg-[#F4F5F7] shadow-md p-1">
                     <p >Price: {"\u20B9"}{product.price}</p>
                     <p className="mt-1">Available: {product.availbility == true? "available." : "not available."}</p>
-                    <p className="mt-1">Note: This product once bought cannot be returned or refunded.</p>
+                    <p className="mt-1">Note: This product once bought cannot be returned or refunded. Please note: if you haven't paid for this product before clicking the button, then this order will be cancelled automatically. Please click buy button again to order, with payment. </p>
                 </div>
                 <div className="w-full h-[20%]  mt-3 flex flex-col justify-center items-center p-2 space-y-3">
                     <div className="flex items-center justify-center w-full">

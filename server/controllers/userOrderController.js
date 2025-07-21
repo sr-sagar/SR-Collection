@@ -50,6 +50,8 @@ const UserOrderController = async(req,res) => {
         const newOrder  =  new Order({
             userId: user._id,
             userName: user.userName,
+            userAddressCity: user.adress.city || "N/A",
+            userHomeAddress: user.adress.location || "N/A", 
             userPhoneNumber: user.phoneNumber,
             products: formattedProducts,
             orderDate: Date.now(),
@@ -57,7 +59,6 @@ const UserOrderController = async(req,res) => {
             totalAmount: totalAmount.toFixed(2),
         });
         await newOrder.save();
-        
         return res.status(201).json({
             message: "order placed successfully.",
             orderStatus: newOrder.orderStatus,

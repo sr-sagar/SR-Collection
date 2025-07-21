@@ -11,7 +11,7 @@ const HomeItems = ({title,id,price,imgUrl}) => {
 
                 </div>
                 <p className="font-medium  text-left text- [#8C8C94] text-black font-Space truncate border-t-1">{`${title}`}</p>
-                <p className="font-medium text-left text- [#8C8C94] text-black font-Space">{`$${price}`}</p>
+                <p className="font-medium text-left text- [#8C8C94] text-black font-Space">{`${"\u20B9"}${price}`}</p>
             </div>
         </Link>
     )

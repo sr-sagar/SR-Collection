@@ -7,14 +7,15 @@ import { Link } from "react-router-dom";
 import PostRequests from "../../services/postRequests";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../../context/AppContext";
+import { usePlaceHolderScroller } from "../../components/common/placeHolderScroller";
 const LogIn = ({scroll}) => {
 
     const navigate = useNavigate();
     const { setCurrentUser } = useAppContext()
     
     const arr = [
-        {type: "text" ,text: "email", id: 1, placeholder: "enter your email"},
-        {type: "password" ,text: "password", id: 2, placeholder: "password"},
+        {key: "email",type: "text" ,text: "Email", id: 1, placeholder: "enter your email"},
+        {key: "password",type: "password" ,text: "Password", id: 2, placeholder: "password must be atleast 6 character long."},
     ]
 
     const [userEmailAndPass,setUserEmailAndPass] = useState({
@@ -24,6 +25,7 @@ const LogIn = ({scroll}) => {
 
     const [btnClicked,setBtnClicked] = useState(false)
     const [msg,setMSG] = useState('')
+
 
 
 
@@ -50,13 +52,13 @@ const LogIn = ({scroll}) => {
         setUserEmailAndPass(preVal => ({...preVal, [key] : val}));
     }
     
-    // this is a fake user for testing purpose. remove this before production
     const userDetails = {
         email: userEmailAndPass.email,
         password: userEmailAndPass.password
     }
 
-
+    
+    const placeHolderScrollText = usePlaceHolderScroller(arr[1].placeholder)
     return(
         <div className="absolute top-0 left-0 w-full h-full bg- green-600 bg-[#F4F5F7]">
             <header className="w-full max-h-[12%] pb-5 bg-[#F4F5F7] justify-center items-center object-center ">
@@ -74,7 +76,7 @@ const LogIn = ({scroll}) => {
                     {arr.map((item) => (
                         <div  key={item.id} className="flex flex-col items-center justify-center w-full">
                                 <p className="w-[80%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%] text-left pl-1">{item.text}</p>
-                            <InputBox  inputType={item.type} inputPlaceHolder={item.placeholder}  value={userEmailAndPass[item.text]} name={item.text} setValue={handleInputChange} showToggle={item.type === "password"}/>
+                            <InputBox  inputType={item.type} inputPlaceHolder={item.text === "Password" ? placeHolderScrollText : item.placeholder}  value={userEmailAndPass[item.key]} name={item.key} setValue={handleInputChange} showToggle={item.type === "password"}/>
                         </div>
 
                     ))
