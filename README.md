@@ -55,17 +55,3 @@ If you see a delay or "failed request," just refresh after a few seconds — it 
 
 ---
 ---
-
-## 🛠️ Getting Started (Local Dev)
-
-```bash
-git clone https://github.com/sr-sagar/SR-Collection.git
-cd SR-Collection
-npm install
-
-# Add your .env file
-MONGO_URI=your_mongo_connection_string
-JWT_SECRET=your_jwt_secret
-
-npm run dev
-```
