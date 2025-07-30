@@ -54,14 +54,6 @@ SR Collect is a production-ready e-commerce web app for managing custom garment 
 If you see a delay or "failed request," just refresh after a few seconds — it will wake up automatically.
 
 ---
-
-## 🧪 Test Access
-
-- Email: `testuser@example.com`
-- Password: `password123`
-
-*(Optional: Add test supervisor/admin accounts here)*
-
 ---
 
 ## 🛠️ Getting Started (Local Dev)
