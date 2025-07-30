@@ -1,4 +1,4 @@
-# 🧥 SR Collect – Full Stack Garment Website
+# 🧥 SR Collection – Full Stack Garment Website
 
 SR Collect is a production-ready e-commerce web app for managing custom garment orders. It includes role-based dashboards, order tracking, and admin management features.
 
